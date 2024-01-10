@@ -1,3 +1,4 @@
+import streamlit as st
 import os
 import json
 import time
@@ -6,19 +7,19 @@ from sklearn.metrics.pairwise import cosine_similarity
 from transformers import BertModel, BertTokenizer
 from concurrent.futures import ThreadPoolExecutor
 from langchain.chat_models import ChatOpenAI
-import streamlit as st
+
 from openai import OpenAI
 
 # Constants
-API_KEY = "YOUR-API-KEY"
-BERT_MODEL_NAME = "bert-base-uncased"
+API_KEY = "YOUR_API_KEY"
+
 
 # Environment Variables
 os.environ["OPENAI_API_KEY"] = API_KEY
 
 # Initialize BERT Model and Tokenizer
-tokenizer = BertTokenizer.from_pretrained(BERT_MODEL_NAME)
-model = BertModel.from_pretrained(BERT_MODEL_NAME)
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+model = BertModel.from_pretrained("bert-base-uncased")
 
 # Initialize OpenAI Client
 client = OpenAI(api_key=API_KEY)
@@ -185,7 +186,7 @@ def handle_user_input():
     display_chat_history()
 
     # React to new user input
-    if prompt := st.chat_input("Ask experts!"):
+    if prompt := st.chat_input("What is up?"):
         process_user_input(prompt)
 
 
