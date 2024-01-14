@@ -2,6 +2,10 @@
 
 GPTWell is a Federated AI Assistant platform for integrating multiple independent AI Assistants.
 
+https://github.com/thejungwon/GPTWell/assets/12247655/c8e2783f-7cf7-4c4e-8831-ea3224a561a4
+
+
+
 ## System Architecture
 
 ![system overview](./assets/system-overview.jpg)
